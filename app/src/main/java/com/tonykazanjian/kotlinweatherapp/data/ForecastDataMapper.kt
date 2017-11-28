@@ -1,19 +1,15 @@
 package com.tonykazanjian.kotlinweatherapp.data
 
+import com.tonykazanjian.kotlinweatherapp.model.ForecastList
 import java.text.DateFormat
 import java.util.*
 import java.util.concurrent.TimeUnit
 
-import com.tonykazanjian.kotlinweatherapp.data.Forecast as ModelForecast
+import com.tonykazanjian.kotlinweatherapp.model.Forecast as ModelForecast
 
 /**
  * @author Tony Kazanjian
  */
-
-data class ForecastList(val city: String, val country: String, val dailyForecast:List<ModelForecast>)
-
-data class Forecast(val date: String, val description: String, val high: Int, val low: Int)
-
 
 class ForecastDataMapper {
 
