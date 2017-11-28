@@ -9,10 +9,8 @@ import com.tonykazanjian.kotlinweatherapp.R
 import com.tonykazanjian.kotlinweatherapp.data.ForecastRequest
 import com.tonykazanjian.kotlinweatherapp.data.Request
 import com.tonykazanjian.kotlinweatherapp.data.RequestForecastCommand
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.find
-import org.jetbrains.anko.longToast
-import org.jetbrains.anko.uiThread
+import com.tonykazanjian.kotlinweatherapp.model.Forecast
+import org.jetbrains.anko.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,7 +23,12 @@ class MainActivity : AppCompatActivity() {
 
         doAsync {
             val result = RequestForecastCommand("90028").execute()
-            uiThread { forecastList.adapter = ForecastListAdapter(result)}
+            uiThread { forecastList.adapter = ForecastListAdapter(result,
+                    object : ForecastListAdapter.OnItemClickListener{
+                        override fun invoke(forecast: Forecast) {
+                            toast(forecast.date)
+                        }
+                    })}
         }
     }
 }

@@ -1,6 +1,7 @@
 package com.tonykazanjian.kotlinweatherapp.data
 
 import com.tonykazanjian.kotlinweatherapp.domain.Command
+import com.tonykazanjian.kotlinweatherapp.model.ForecastList
 
 /**
  * @author Tony Kazanjian
