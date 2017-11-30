@@ -6,11 +6,9 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import com.tonykazanjian.kotlinweatherapp.adapters.ForecastListAdapter
 import com.tonykazanjian.kotlinweatherapp.R
-import com.tonykazanjian.kotlinweatherapp.data.ForecastRequest
-import com.tonykazanjian.kotlinweatherapp.data.Request
 import com.tonykazanjian.kotlinweatherapp.data.RequestForecastCommand
-import com.tonykazanjian.kotlinweatherapp.model.Forecast
 import org.jetbrains.anko.*
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,7 +16,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val forecastList: RecyclerView = find(R.id.forecast_list)
         forecastList.layoutManager = LinearLayoutManager(this)
 
         doAsync {
